@@ -1,6 +1,6 @@
 
 import type { TGuitar, CartItem, TGuitarID } from "../types"
-import { useState, useEffect, useEffectEvent, useMemo } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { db } from "../data/db"
 
 const useCart = () => {
@@ -9,7 +9,7 @@ const useCart = () => {
     return localStorageCart ? JSON.parse(localStorageCart) : []
   }
 
-  const [data, setData] = useState(db);
+  const [data] = useState(db);
   const [cart, setCart] = useState(initialCart);
 
   const minimumProductQuantity = 1;
